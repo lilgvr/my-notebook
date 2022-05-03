@@ -1,0 +1,14 @@
+.column-ctr{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border-right: var(--border);
+    height: 100%;
+    width: 100%;
+    --border: 1px solid white;
+}
+
+.column-ctr:first-of-type{
+    border-left: var(--border);
+}

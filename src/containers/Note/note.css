@@ -1,0 +1,51 @@
+.note {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-bottom: 1px solid #c8c8c8;
+    width: 90%;
+    transition: border-color .2s linear;
+}
+
+.note p{
+    transition: color .2s linear;
+}
+
+.note:hover{
+    border-color: #740404;
+    cursor: pointer;
+}
+
+.note:hover p{
+    color: #740404;
+}
+
+.note:last-of-type {
+    border: none;
+}
+
+.note_date, .note_description {
+    font-size: 1vw;
+    color: #c8c8c8;
+    margin: 0 0 .5vw .25vw;
+}
+
+.note_date {
+    margin-top: .5vw;
+}
+
+.note_description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.note_description::before {
+    content: "// ";
+}
+
+.note_description:empty::before{
+    content: "(описание отсутствует)";
+    font-size: .75vw;
+}

@@ -1,0 +1,38 @@
+.header-btn-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-btn {
+    border: 2px solid #C8C8C8;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7vw;
+    height: 3vw;
+    transition: background-color .2s linear;
+}
+
+.header-btn span {
+    font-size: 2vw;
+    transition: color .25s linear;
+    height: 100%;
+}
+
+.header-btn:hover {
+    cursor: pointer;
+    background-color: #c8c8c8;
+}
+
+.header-btn:hover span {
+    color: #111111;
+}
+
+.header-btn-ctr p{
+    font-size: 1vw;
+    font-weight: 100;
+}
