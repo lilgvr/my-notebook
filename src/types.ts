@@ -7,7 +7,5 @@ export interface INote {
 
 export interface INotebookState {
     categories: string[],
-    notes: INote[],
-    isLoading: boolean,
-    isError: boolean
+    notes: INote[]
 }
