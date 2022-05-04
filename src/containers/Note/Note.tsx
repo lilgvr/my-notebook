@@ -1,18 +1,19 @@
-import {NoteActionRemove} from "../../store/action-creators/note/NoteActionRemove";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import {formatDate} from "../../service/service";
 import {useDispatch} from "react-redux";
 import React, {FC} from "react";
 import "./note.css";
+import {NotePostRequest} from "../../service/NotesRestService";
 
 const Note: FC<{ id: number, date: Date, description: string }> = ({id, date, description}) => {
     const dispatch = useDispatch();
-    const {notes} = useTypedSelector(state => state.note);
+    const {notes} = useTypedSelector(state => state.noteRest);
 
     let current = notes.find(x => x.id === id);
 
     const handleClick = () => {
-        dispatch(NoteActionRemove(current));
+        // @ts-ignore
+        NotePostRequest('/note/delete', dispatch, [current], current.id);
     }
 
     return (

@@ -1,15 +1,13 @@
-import {CategoryActionClean} from "../../store/action-creators/category/CategoryActionClean";
-import {persistor} from "../../store/configureStore";
+import {persistor, serverUrl} from "../../store/configureStore";
 import {useDispatch} from "react-redux";
 import {FC} from "react";
 import "./clear-btn.css";
-import {NoteActionClean} from "../../store/action-creators/note/NoteActionClean";
+import {CategoryPostRequest} from "../../service/CategoryRestService";
 
 const ClearBtn: FC = () => {
     const dispatch = useDispatch();
     const handleClick = () => {
-        dispatch(CategoryActionClean());
-        dispatch(NoteActionClean());
+        CategoryPostRequest('/deleteAll', dispatch, []);
         persistor.flush();
     }
 

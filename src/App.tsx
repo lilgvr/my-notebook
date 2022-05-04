@@ -9,8 +9,8 @@ import {CategoryGetRequest} from "./service/CategoryRestService";
 function App() {
     const dispatch = useDispatch();
     useEffect(() => {
-        // NoteGetRequest(dispatch);
-        CategoryGetRequest(dispatch);
+        NoteGetRequest('/note', dispatch);
+        CategoryGetRequest('category', dispatch);
     }, []);
 
     const {categories} = useTypedSelector(state => state.categoryRest);

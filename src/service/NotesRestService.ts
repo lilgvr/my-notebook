@@ -5,26 +5,37 @@ import {
     GetFailed,
     GetRequested,
     PostDone,
-    PostSent,
-    PostFailed
+    PostFailed,
+    PostSent
 } from "../store/action-creators/note/NoteRestActions";
 import {serverUrl} from "../store/configureStore";
 import {INote} from "../store/types";
 
-export const NoteGetRequest = (dispatch: Dispatch<IRestNoteAction>): void => {
+export const NoteGetRequest = (subDir: string, dispatch: Dispatch<IRestNoteAction>): void => {
     dispatch(GetRequested());
-    const url = serverUrl + '/note'
+    const url = serverUrl + subDir;
 
     fetch(url).then(response => response.json())
         .then(data => dispatch(GetDone(data)))
         .catch(() => dispatch(GetFailed()));
 }
 
-export const NotePostRequest = (dispatch: Dispatch<IRestNoteAction>, payload: INote[]): void => {
+export const NotePostRequest = (subDir: string, dispatch: Dispatch<IRestNoteAction>, payload: INote[]): void => {
     dispatch(PostSent());
-    const url = serverUrl + '/note/add';
+    const url = serverUrl + subDir;
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    }
 
-    fetch(url).then(response => response.json())
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: new Headers(headers)
+    }
+
+    fetch(url, options).then(response => response.json())
         .then(() => dispatch(PostDone(payload)))
         .catch(() => dispatch(PostFailed()));
 }

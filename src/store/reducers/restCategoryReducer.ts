@@ -22,6 +22,15 @@ const restCategoryReducer = (state: INotebookState = initialState, action: IRest
         case RestCategoryActions.POST_CATEGORIES_FAILED:
             return {...state, isLoading: false, isError: true};
 
+        case RestCategoryActions.POST_CATEGORIES_CLEAN_SENT:
+            return {...state, isLoading: true};
+
+        case RestCategoryActions.POST_CATEGORIES_CLEAN_DONE:
+            return initialState;
+
+        case RestCategoryActions.POST_CATEGORIES_CLEAN_FAILED:
+            return {...state, isLoading: false, isError: true};
+
         default:
             return state;
     }

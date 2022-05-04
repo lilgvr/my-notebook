@@ -1,4 +1,4 @@
-import CategoryCtr from "../CategoriesCtr/CategoryCtr";
+import CategoryCtr from "../CategoryCtr/CategoryCtr";
 import NotesCtr from "../NotesCtr/NotesCtr";
 import React from "react";
 import "./column-ctr.css";

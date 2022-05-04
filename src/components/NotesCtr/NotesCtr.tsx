@@ -11,7 +11,7 @@ const NotesCtr: React.FC<{ id: number }> = ({id}) => {
     };
     const filterFunc = (n: INote) => n.categoryId === id;
 
-    const {notes} = useTypedSelector(state => state.note);
+    const {notes} = useTypedSelector(state => state.noteRest);
     const preparedNotes = notes.filter(filterFunc).sort(sortFunc);
 
     return (
