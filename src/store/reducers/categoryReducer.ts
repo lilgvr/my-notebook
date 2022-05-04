@@ -1,7 +1,7 @@
 import {CategoryActions, ICategoryAction} from "../actions/ICategoryAction";
 import {removeItem} from "../../service/service";
 import {initialState} from "../initialState";
-import {INotebookState} from "../../types";
+import {INotebookState} from "../types";
 
 const categoryReducer = (state: INotebookState = initialState, action: ICategoryAction): INotebookState => {
     switch (action.type) {

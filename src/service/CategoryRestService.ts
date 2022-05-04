@@ -9,7 +9,7 @@ import {
 } from "../store/action-creators/category/CategoryRestActions";
 import {serverUrl} from "../store/configureStore";
 
-export const GetRequest = (dispatch: Dispatch<IRestCategoryAction>): void => {
+export const CategoryGetRequest = (dispatch: Dispatch<IRestCategoryAction>): void => {
     dispatch(GetRequested());
     const url = serverUrl + '/category';
 
@@ -18,7 +18,7 @@ export const GetRequest = (dispatch: Dispatch<IRestCategoryAction>): void => {
         .catch(() => dispatch(GetFailed()));
 }
 
-export const PostRequest = (dispatch: Dispatch<IRestCategoryAction>, payload: string[]) => {
+export const CategoryPostRequest = (dispatch: Dispatch<IRestCategoryAction>, payload: string[]) => {
     dispatch(PostSent());
     const url = serverUrl + '/category/add';
 

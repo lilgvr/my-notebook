@@ -1,5 +1,5 @@
 import {INoteAction, NoteActions} from "../../actions/INoteAction";
-import {INote} from "../../../types";
+import {INote} from "../../types";
 
 export function NoteActionRemove(payload: INote | undefined): INoteAction {
     return {

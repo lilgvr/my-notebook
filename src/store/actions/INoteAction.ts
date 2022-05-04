@@ -1,4 +1,4 @@
-import {INote} from "../../types";
+import {INote} from "../types";
 import {Action} from "redux";
 
 export interface INoteAction extends Action {
