@@ -1,4 +1,4 @@
-import {INotebookState} from "../../types";
+import {INotebookState} from "../types";
 import {INoteAction, NoteActions} from "../actions/INoteAction";
 import {removeItem} from "../../service/service";
 import {initialState} from "../initialState";

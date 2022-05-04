@@ -1,4 +1,4 @@
-import {INotebookState} from "../types";
+import {INotebookState} from "./types";
 
 const testNotes = [
     {id: 0, categoryId: 0, date: new Date(2022, 2, 11), description: "Вечером"},
