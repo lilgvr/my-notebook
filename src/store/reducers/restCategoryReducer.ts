@@ -1,7 +1,8 @@
 import {INotebookState} from "../types";
 import {IRestCategoryAction, RestCategoryActions} from "../actions/IRestCategoryAction";
+import {initialState} from "../initialState";
 
-const restCategoryReducer = (state: INotebookState, action: IRestCategoryAction): INotebookState => {
+const restCategoryReducer = (state: INotebookState = initialState, action: IRestCategoryAction): INotebookState => {
     switch (action.type) {
         case RestCategoryActions.GET_CATEGORIES_REQUESTED:
             return {...state, isLoading: true};

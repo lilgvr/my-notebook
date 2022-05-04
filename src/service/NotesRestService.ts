@@ -11,7 +11,7 @@ import {
 import {serverUrl} from "../store/configureStore";
 import {INote} from "../store/types";
 
-export const GetRequest = (dispatch: Dispatch<IRestNoteAction>): void => {
+export const NoteGetRequest = (dispatch: Dispatch<IRestNoteAction>): void => {
     dispatch(GetRequested());
     const url = serverUrl + '/note'
 
@@ -20,7 +20,7 @@ export const GetRequest = (dispatch: Dispatch<IRestNoteAction>): void => {
         .catch(() => dispatch(GetFailed()));
 }
 
-export const PostRequest = (dispatch: Dispatch<IRestNoteAction>, payload: INote[]): void => {
+export const NotePostRequest = (dispatch: Dispatch<IRestNoteAction>, payload: INote[]): void => {
     dispatch(PostSent());
     const url = serverUrl + '/note/add';
 

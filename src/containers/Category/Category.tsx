@@ -5,6 +5,7 @@ import useTypedSelector from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import React from "react";
 import "./category.css";
+import {CategoryPostRequest} from "../../service/CategoryRestService";
 
 const Button: React.FC<{ id: number }> = ({id}) => {
     const dispatch = useDispatch();

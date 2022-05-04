@@ -1,7 +1,8 @@
 import {INotebookState} from "../types";
 import {IRestNoteAction, RestNoteActions} from "../actions/IRestNoteAction";
+import {initialState} from "../initialState";
 
-const restNoteReducer = (state: INotebookState, action: IRestNoteAction): INotebookState => {
+const restNoteReducer = (state: INotebookState = initialState, action: IRestNoteAction): INotebookState => {
     switch (action.type) {
         case RestNoteActions.GET_NOTES_REQUESTED:
             return {...state, isLoading: true};

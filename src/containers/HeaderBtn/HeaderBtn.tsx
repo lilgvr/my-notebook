@@ -3,6 +3,7 @@ import {FC} from "react";
 import {useDispatch} from "react-redux";
 import {CategoryActionAdd} from "../../store/action-creators/category/CategoryActionAdd";
 import useTypedSelector from "../../hooks/useTypedSelector";
+import {CategoryPostRequest} from "../../service/CategoryRestService";
 
 const HeaderBtn: FC = () => {
     const {categories} = useTypedSelector(state => state.category);
@@ -11,6 +12,7 @@ const HeaderBtn: FC = () => {
         let title = prompt("Введите название категории") || "";
         if (title) title = title.trim();
         const action = CategoryActionAdd(title)
+        CategoryPostRequest(dispatch, [title]);
         dispatch(action);
     }
 
