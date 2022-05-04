@@ -8,6 +8,8 @@ const persistConfig = {
     storage
 }
 
+export const serverUrl = 'http://localhost:8080';
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const persistedStore = configureStore({

@@ -33,7 +33,7 @@ export function PostDone(payload: INote[]): IRestNoteAction {
     }
 }
 
-export function PostError(): IRestNoteAction {
+export function PostFailed(): IRestNoteAction {
     return {
         type: RestNoteActions.POST_NOTES_FAILED
     }
