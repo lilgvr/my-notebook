@@ -2,7 +2,6 @@ import {INoteAction, NoteActions} from "../../actions/INoteAction";
 
 export function NoteActionClean(): INoteAction {
     return {
-        type: NoteActions.CLEAN_NOTES,
-        payload: undefined
+        type: NoteActions.CLEAN_NOTES
     }
 }

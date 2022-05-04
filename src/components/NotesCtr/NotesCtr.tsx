@@ -1,6 +1,6 @@
 import useTypedSelector from "../../hooks/useTypedSelector";
 import Note from "../../containers/Note/Note";
-import {INote} from "../../types";
+import {INote} from "../../store/types";
 import React from "react";
 import "./notes-ctr.css";
 
