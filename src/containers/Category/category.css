@@ -8,7 +8,7 @@
 }
 
 .category p {
-    font-size: 1vw;
+    font-size: .75vw;
     font-weight: 100;
     transition: color .2s linear;
 }
