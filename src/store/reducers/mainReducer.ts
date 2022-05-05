@@ -23,14 +23,14 @@ const mainReducer = (state: INotebookState = initialState, action: NotebookActio
         case CategoryActions.REMOVE_CATEGORY:
             return {...state, categories: state.categories.filter(el => el !== action.payload)};
 
+        case CategoryActions.CLEAN_CATEGORIES:
+            return {...state, categories: initialState.categories};
+
         case CategoryActions.RESET_CATEGORIES:
             return {
                 ...state,
-                notes: state.notes.filter(n => n.categoryId !== state.categories.indexOf(action.payload)) // TODO удаление заметок при удалении категории
+                notes: state.notes.filter(n => n.categoryId !== state.categories.indexOf(action.payload))
             };
-
-        case CategoryActions.CLEAN_CATEGORIES:
-            return {...state, categories: initialState.categories};
 
         default:
             return state;
