@@ -1,8 +1,9 @@
 import {Action} from "redux";
+import {ICategory} from "../types";
 
 export interface ICategoryAction extends Action {
     type: CategoryActions,
-    payload: string
+    payload: ICategory
 }
 
 export enum CategoryActions {

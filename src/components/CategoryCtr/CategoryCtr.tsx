@@ -8,7 +8,7 @@ const CategoryCtr: React.FC<{ id: number }> = ({id}) => {
 
     return (
         <div className="category-ctr">
-            <Category title={categories[id]} id={id}/>
+            <Category title={categories[id].title} id={id}/>
         </div>
     );
 }

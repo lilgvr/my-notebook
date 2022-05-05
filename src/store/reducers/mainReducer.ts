@@ -2,6 +2,7 @@ import {INotebookState, NotebookAction} from "../types";
 import {initialState} from "../initialState";
 import {NoteActions} from "../actions/INoteAction";
 import {CategoryActions} from "../actions/ICategoryAction";
+import category from "../../containers/Category/Category";
 
 const mainReducer = (state: INotebookState = initialState, action: NotebookAction): INotebookState => {
     switch (action.type) {
@@ -21,7 +22,7 @@ const mainReducer = (state: INotebookState = initialState, action: NotebookActio
             return {...state, categories: [...state.categories, action.payload]};
 
         case CategoryActions.REMOVE_CATEGORY:
-            return {...state, categories: state.categories.filter(el => el !== action.payload)};
+            return {...state, categories: state.categories.filter(el => el.id !== action.payload.id)};
 
         case CategoryActions.CLEAN_CATEGORIES:
             return {...state, categories: initialState.categories};
@@ -29,7 +30,7 @@ const mainReducer = (state: INotebookState = initialState, action: NotebookActio
         case CategoryActions.RESET_CATEGORIES:
             return {
                 ...state,
-                notes: state.notes.filter(n => n.categoryId !== state.categories.indexOf(action.payload))
+                notes: state.notes.filter(note => state.categories.filter(category => category.id !== note.categoryId))
             };
 
         default:

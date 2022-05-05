@@ -8,8 +8,13 @@ export interface INote {
     description: string
 }
 
+export interface ICategory {
+    id: number,
+    title: string
+}
+
 export interface INotebookState {
-    categories: string[],
+    categories: ICategory[],
     notes: INote[]
 }
 

@@ -29,8 +29,10 @@ const Button: React.FC<{ id: number }> = ({id}) => {
 const Category: React.FC<{ title: string, id: number }> = ({title, id}) => {
     const dispatch = useDispatch();
     const handleClick = () => {
-        dispatch(CategoryActionClearNotes(title));
-        dispatch(CategoryActionRemove(title));
+        const payload = {id, title};
+        console.log(payload)
+        dispatch(CategoryActionClearNotes(payload));
+        dispatch(CategoryActionRemove(payload));
     }
 
     return (
