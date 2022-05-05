@@ -7,7 +7,7 @@ import "./note.css";
 
 const Note: FC<{ id: number, date: Date, description: string }> = ({id, date, description}) => {
     const dispatch = useDispatch();
-    const {notes} = useTypedSelector(state => state.note);
+    const {notes} = useTypedSelector(state => state.main);
 
     let current = notes.find(x => x.id === id);
 

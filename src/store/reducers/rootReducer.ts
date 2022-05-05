@@ -1,8 +1,7 @@
-import categoryReducer from "./categoryReducer";
 import {combineReducers} from "redux";
-import noteReducer from "./noteReducer";
+import mainReducer from "./mainReducer";
 
-const rootReducer = combineReducers({category: categoryReducer, note: noteReducer});
+const rootReducer = combineReducers({main: mainReducer});
 
 export type RootState = ReturnType<typeof rootReducer>
 

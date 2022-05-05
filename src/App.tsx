@@ -4,7 +4,7 @@ import React, {Fragment} from 'react';
 import Header from "./components/Header/Header";
 
 function App() {
-    const {categories} = useTypedSelector(state => state.category);
+    const {categories} = useTypedSelector(state => state.main);
 
     return (
         <Fragment>

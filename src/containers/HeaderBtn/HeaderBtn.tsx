@@ -2,10 +2,8 @@ import "./header-btn.css";
 import {FC} from "react";
 import {useDispatch} from "react-redux";
 import {CategoryActionAdd} from "../../store/action-creators/category/CategoryActionAdd";
-import useTypedSelector from "../../hooks/useTypedSelector";
 
 const HeaderBtn: FC = () => {
-    const {categories} = useTypedSelector(state => state.category);
     const dispatch = useDispatch();
     const handleClick = () => {
         let title = prompt("Введите название категории") || "";

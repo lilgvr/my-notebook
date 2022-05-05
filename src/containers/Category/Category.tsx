@@ -8,7 +8,7 @@ import "./category.css";
 
 const Button: React.FC<{ id: number }> = ({id}) => {
     const dispatch = useDispatch();
-    const {notes} = useTypedSelector(state => state.note);
+    const {notes} = useTypedSelector(state => state.main);
     const count = notes.length;
 
     const handleClick = () => {
