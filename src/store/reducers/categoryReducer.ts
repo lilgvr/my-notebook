@@ -1,5 +1,4 @@
 import {CategoryActions, ICategoryAction} from "../actions/ICategoryAction";
-import {removeItem} from "../../service/service";
 import {initialState} from "../initialState";
 import {INotebookState} from "../types";
 
