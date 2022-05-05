@@ -1,6 +1,8 @@
-export interface IRestCategoryAction {
+import {Action} from "redux";
+
+export interface IRestCategoryAction extends Action {
     type: RestCategoryActions,
-    payload: Array<string>
+    payload: string[]
 }
 
 export enum RestCategoryActions {

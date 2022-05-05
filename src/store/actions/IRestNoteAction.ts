@@ -1,8 +1,9 @@
 import {INote} from "../types";
+import {Action} from "redux";
 
-export interface IRestNoteAction {
+export interface IRestNoteAction extends Action {
     type: RestNoteActions,
-    payload?: Array<INote>
+    payload?: INote[]
 }
 
 export enum RestNoteActions {

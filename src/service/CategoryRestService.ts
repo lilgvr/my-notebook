@@ -9,21 +9,20 @@ import {
 } from "../store/action-creators/category/CategoryRestActions";
 import {serverUrl} from "../store/configureStore";
 
-export const CategoryGetRequest = (subDir: string, dispatch: Dispatch<IRestCategoryAction>) => {
+export const CategoryGetRequest = async (subDir: string, dispatch: Dispatch<IRestCategoryAction>) => {
     dispatch(GetRequested());
     const url = serverUrl + subDir;
 
-    fetch(url).then(response => response.json())
+    await fetch(url).then(response => response.json())
         .then(data => dispatch(GetDone(data)))
         .catch(() => dispatch(GetFailed()));
 }
 
-export const CategoryPostRequest = (subDir: string, dispatch: Dispatch<IRestCategoryAction>, payload: string[]) => {
+export const CategoryPostRequest = async (subDir: string, dispatch: Dispatch<IRestCategoryAction>, payload: string[]) => {
     dispatch(PostSent());
     const url = serverUrl + subDir;
     const headers = {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
         'Access-Control-Allow-Origin': '*'
     }
 
@@ -33,7 +32,7 @@ export const CategoryPostRequest = (subDir: string, dispatch: Dispatch<IRestCate
         headers: new Headers(headers)
     }
 
-    fetch(url, options).then(response => response.json())
+    await fetch(url, options).then(response => response.json())
         .then(() => dispatch(PostDone(payload)))
         .catch(() => dispatch(PostFailed()));
 }

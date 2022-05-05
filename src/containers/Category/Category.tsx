@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import React from "react";
 import "./category.css";
 import {NotePostRequest} from "../../service/NotesRestService";
+import {CategoryPostRequest} from "../../service/CategoryRestService";
 
 const Button: React.FC<{ id: number }> = ({id}) => {
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const Button: React.FC<{ id: number }> = ({id}) => {
 const Category: React.FC<{ title: string, id: number }> = ({title, id}) => {
     const dispatch = useDispatch();
     const handleClick = () => {
-
+        CategoryPostRequest('/category/delete', dispatch, [`${id}`])
     }
 
     return (

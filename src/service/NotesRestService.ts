@@ -11,21 +11,20 @@ import {
 import {serverUrl} from "../store/configureStore";
 import {INote} from "../store/types";
 
-export const NoteGetRequest = (subDir: string, dispatch: Dispatch<IRestNoteAction>): void => {
+export const NoteGetRequest = async (subDir: string, dispatch: Dispatch<IRestNoteAction>) => {
     dispatch(GetRequested());
     const url = serverUrl + subDir;
 
-    fetch(url).then(response => response.json())
+    await fetch(url).then(response => response.json())
         .then(data => dispatch(GetDone(data)))
         .catch(() => dispatch(GetFailed()));
 }
 
-export const NotePostRequest = (subDir: string, dispatch: Dispatch<IRestNoteAction>, payload: INote[]): void => {
+export const NotePostRequest = async (subDir: string, dispatch: Dispatch<IRestNoteAction>, payload: INote[]) => {
     dispatch(PostSent());
     const url = serverUrl + subDir;
     const headers = {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
         'Access-Control-Allow-Origin': '*'
     }
 
@@ -35,7 +34,7 @@ export const NotePostRequest = (subDir: string, dispatch: Dispatch<IRestNoteActi
         headers: new Headers(headers)
     }
 
-    fetch(url, options).then(response => response.json())
+    await fetch(url, options).then(response => response.json())
         .then(() => dispatch(PostDone(payload)))
         .catch(() => dispatch(PostFailed()));
 }
