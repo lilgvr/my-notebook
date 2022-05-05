@@ -8,6 +8,6 @@ export interface ICategoryAction extends Action {
 export enum CategoryActions {
     ADD_CATEGORY = "ADD_CATEGORY",
     REMOVE_CATEGORY = "REMOVE_CATEGORY",
-    CLEAR_NOTES = "CLEAR_NOTES",
-    CLEAN_CATEGORIES = "CLEAN_CATEGORIES"
+    CLEAN_CATEGORIES = "CLEAN_CATEGORIES",
+    CLEAR_NOTES = "CLEAR_NOTES"
 }
