@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import {NoteGetRequest} from "./service/NotesRestService";
 import {useDispatch} from "react-redux";
 import {CategoryGetRequest} from "./service/CategoryRestService";
+import {ICategory} from "./store/types";
 
 function App() {
     const dispatch = useDispatch();
@@ -13,13 +14,13 @@ function App() {
         CategoryGetRequest('category', dispatch);
     }, []);
 
-    const {categories} = useTypedSelector(state => state.categoryRest);
+    const {categories} = useTypedSelector(state => state.main);
 
     return (
         <Fragment>
             <Header/>
             <div className="container">
-                {categories.map((el: string, i: number) => {
+                {categories.map((el: ICategory, i: number) => {
                     return <ColumnCtr id={i} key={i}/>
                 })}
             </div>

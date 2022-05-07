@@ -2,13 +2,15 @@ import "./header-btn.css";
 import {FC} from "react";
 import {useDispatch} from "react-redux";
 import {CategoryPostRequest} from "../../service/CategoryRestService";
+import useTypedSelector from "../../hooks/useTypedSelector";
 
 const HeaderBtn: FC = () => {
     const dispatch = useDispatch();
+    const {categories} = useTypedSelector(state => state.main);
     const handleClick = () => {
         let title = prompt("Введите название категории") || "";
         if (title) title = title.trim();
-        CategoryPostRequest('/category/add', dispatch, [title]);
+        CategoryPostRequest('/category/add', dispatch, [{id: categories.length, title: title}]);
     }
 
     return (

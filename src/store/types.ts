@@ -1,3 +1,6 @@
+import {INoteAction} from "./actions/INoteAction";
+import {ICategoryAction} from "./actions/ICategoryAction";
+
 export interface INote {
     id: number,
     categoryId: number,
@@ -5,9 +8,16 @@ export interface INote {
     description: string
 }
 
+export interface ICategory {
+    id: number,
+    title: string
+}
+
 export interface INotebookState {
-    categories: string[],
+    categories: ICategory[],
     notes: INote[],
     isLoading: boolean,
     isError: boolean
 }
+
+export type NotebookAction = INoteAction | ICategoryAction;

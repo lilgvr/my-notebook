@@ -1,15 +1,17 @@
 import {Dispatch} from "redux";
-import {IRestCategoryAction} from "../store/actions/IRestCategoryAction";
+import {ICategoryAction} from "../store/actions/ICategoryAction";
 import {
     GetDone,
     GetFailed,
     GetRequested,
-    PostDone, PostFailed,
+    PostDone,
+    PostFailed,
     PostSent
 } from "../store/action-creators/category/CategoryRestActions";
 import {serverUrl} from "../store/configureStore";
+import {ICategory} from "../store/types";
 
-export const CategoryGetRequest = async (subDir: string, dispatch: Dispatch<IRestCategoryAction>) => {
+export const CategoryGetRequest = async (subDir: string, dispatch: Dispatch<ICategoryAction>) => {
     dispatch(GetRequested());
     const url = serverUrl + subDir;
 
@@ -18,18 +20,19 @@ export const CategoryGetRequest = async (subDir: string, dispatch: Dispatch<IRes
         .catch(() => dispatch(GetFailed()));
 }
 
-export const CategoryPostRequest = async (subDir: string, dispatch: Dispatch<IRestCategoryAction>, payload: string[]) => {
+export const CategoryPostRequest = async (subDir: string, dispatch: Dispatch<ICategoryAction>, payload: ICategory[]) => {
     dispatch(PostSent());
     const url = serverUrl + subDir;
     const headers = {
-        'Content-Type': 'application/json',
+        mode: 'no-cors',
+        Accept: 'application/json',
         'Access-Control-Allow-Origin': '*'
     }
 
     const options = {
         method: 'POST',
-        body: JSON.stringify(payload),
-        headers: new Headers(headers)
+        headers: new Headers(headers),
+        body: JSON.stringify(payload)
     }
 
     await fetch(url, options).then(response => response.json())

@@ -1,10 +1,8 @@
 import {combineReducers} from "redux";
-import restNoteReducer from "./restNoteReducer";
-import restCategoryReducer from "./restCategoryReducer";
+import mainReducer from "./mainReducer";
 
 const rootReducer = combineReducers({
-    noteRest: restNoteReducer,
-    categoryRest: restCategoryReducer
+    main: mainReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>

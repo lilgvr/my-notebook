@@ -1,40 +1,40 @@
 import {INote} from "../../types";
-import {IRestNoteAction, RestNoteActions} from "../../actions/IRestNoteAction";
+import {INoteAction, NoteActions} from "../../actions/INoteAction";
 
-export function GetRequested(): IRestNoteAction {
+export function GetRequested(): INoteAction {
     return {
-        type: RestNoteActions.GET_NOTES_REQUESTED,
+        type: NoteActions.GET_NOTE_REQUESTED,
     }
 }
 
-export function GetDone(payload: INote[]): IRestNoteAction {
+export function GetDone(payload: INote[]): INoteAction {
     return {
-        type: RestNoteActions.GET_NOTES_DONE,
+        type: NoteActions.GET_NOTE_DONE,
         payload: payload
     }
 }
 
-export function GetFailed(): IRestNoteAction {
+export function GetFailed(): INoteAction {
     return {
-        type: RestNoteActions.GET_NOTES_FAILED
+        type: NoteActions.GET_NOTE_FAILED
     }
 }
 
-export function PostSent(): IRestNoteAction {
+export function PostSent(): INoteAction {
     return {
-        type: RestNoteActions.POST_NOTES_SENT
+        type: NoteActions.POST_NOTE_SENT
     }
 }
 
-export function PostDone(payload: INote[]): IRestNoteAction {
+export function PostDone(payload: INote[]): INoteAction {
     return {
-        type: RestNoteActions.POST_NOTES_DONE,
+        type: NoteActions.POST_NOTE_DONE,
         payload: payload
     }
 }
 
-export function PostFailed(): IRestNoteAction {
+export function PostFailed(): INoteAction {
     return {
-        type: RestNoteActions.POST_NOTES_FAILED
+        type: NoteActions.POST_NOTE_FAILED
     }
 }

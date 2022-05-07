@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {IRestNoteAction} from "../store/actions/IRestNoteAction";
+import {INoteAction} from "../store/actions/INoteAction";
 import {
     GetDone,
     GetFailed,
@@ -11,7 +11,7 @@ import {
 import {serverUrl} from "../store/configureStore";
 import {INote} from "../store/types";
 
-export const NoteGetRequest = async (subDir: string, dispatch: Dispatch<IRestNoteAction>) => {
+export const NoteGetRequest = async (subDir: string, dispatch: Dispatch<INoteAction>) => {
     dispatch(GetRequested());
     const url = serverUrl + subDir;
 
@@ -20,7 +20,7 @@ export const NoteGetRequest = async (subDir: string, dispatch: Dispatch<IRestNot
         .catch(() => dispatch(GetFailed()));
 }
 
-export const NotePostRequest = async (subDir: string, dispatch: Dispatch<IRestNoteAction>, payload: INote[]) => {
+export const NotePostRequest = async (subDir: string, dispatch: Dispatch<INoteAction>, payload: INote[]) => {
     dispatch(PostSent());
     const url = serverUrl + subDir;
     const headers = {

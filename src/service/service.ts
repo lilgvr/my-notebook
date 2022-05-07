@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {IRestNoteAction} from "../store/actions/IRestNoteAction";
+import {INoteAction} from "../store/actions/INoteAction";
 import {INote} from "../store/types";
 
 export function removeItem<T>(arr: T[], value: T) {

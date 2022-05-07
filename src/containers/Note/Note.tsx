@@ -7,7 +7,7 @@ import {NotePostRequest} from "../../service/NotesRestService";
 
 const Note: FC<{ id: number, date: Date, description: string }> = ({id, date, description}) => {
     const dispatch = useDispatch();
-    const {notes} = useTypedSelector(state => state.noteRest);
+    const {notes} = useTypedSelector(state => state.main);
 
     let current = notes.find(x => x.id === id);
 

@@ -1,43 +1,44 @@
-import {IRestCategoryAction, RestCategoryActions} from "../../actions/IRestCategoryAction";
+import {CategoryActions, ICategoryAction} from "../../actions/ICategoryAction";
+import {ICategory} from "../../types";
 
-export function GetRequested(): IRestCategoryAction {
+export function GetRequested(): ICategoryAction {
     return {
-        type: RestCategoryActions.GET_CATEGORIES_REQUESTED,
+        type: CategoryActions.GET_CATEGORY_REQUESTED,
         payload: []
     }
 }
 
-export function GetDone(payload: string[]): IRestCategoryAction {
+export function GetDone(payload: ICategory[]): ICategoryAction {
     return {
-        type: RestCategoryActions.GET_CATEGORIES_DONE,
+        type: CategoryActions.GET_CATEGORY_DONE,
         payload: payload
     }
 }
 
-export function GetFailed(): IRestCategoryAction {
+export function GetFailed(): ICategoryAction {
     return {
-        type: RestCategoryActions.GET_CATEGORIES_FAILED,
+        type: CategoryActions.GET_CATEGORIES_FAILED,
         payload: []
     }
 }
 
-export function PostSent(): IRestCategoryAction {
+export function PostSent(): ICategoryAction {
     return {
-        type: RestCategoryActions.POST_CATEGORIES_SENT,
+        type: CategoryActions.POST_CATEGORY_SENT,
         payload: []
     }
 }
 
-export function PostDone(payload: string[]): IRestCategoryAction {
+export function PostDone(payload: ICategory[]): ICategoryAction {
     return {
-        type: RestCategoryActions.POST_CATEGORIES_DONE,
+        type: CategoryActions.POST_CATEGORY_DONE,
         payload: payload
     }
 }
 
-export function PostFailed(): IRestCategoryAction {
+export function PostFailed(): ICategoryAction {
     return {
-        type: RestCategoryActions.POST_CATEGORIES_FAILED,
+        type: CategoryActions.POST_CATEGORY_FAILED,
         payload: []
     }
 }

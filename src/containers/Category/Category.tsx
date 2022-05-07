@@ -7,7 +7,7 @@ import {CategoryPostRequest} from "../../service/CategoryRestService";
 
 const Button: React.FC<{ id: number }> = ({id}) => {
     const dispatch = useDispatch();
-    const {notes} = useTypedSelector(state => state.noteRest);
+    const {notes} = useTypedSelector(state => state.main);
     const count = notes.length;
 
     const handleClick = () => {
@@ -27,7 +27,7 @@ const Button: React.FC<{ id: number }> = ({id}) => {
 const Category: React.FC<{ title: string, id: number }> = ({title, id}) => {
     const dispatch = useDispatch();
     const handleClick = () => {
-        CategoryPostRequest('/category/delete', dispatch, [`${id}`])
+        CategoryPostRequest('/category/delete', dispatch, [{id, title}])
     }
 
     return (
