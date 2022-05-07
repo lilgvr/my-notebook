@@ -2,7 +2,6 @@ import {INotebookState, NotebookAction} from "../types";
 import {initialState} from "../initialState";
 import {NoteActions} from "../actions/INoteAction";
 import {CategoryActions} from "../actions/ICategoryAction";
-import category from "../../containers/Category/Category";
 
 const mainReducer = (state: INotebookState = initialState, action: NotebookAction): INotebookState => {
     switch (action.type) {

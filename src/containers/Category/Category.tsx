@@ -12,8 +12,10 @@ const Button: React.FC<{ id: number }> = ({id}) => {
     const count = notes.length;
 
     const handleClick = () => {
-        let desc = prompt("Введите описание заметки") || "";
-        if (desc) desc = desc.trim();
+        let desc = prompt("Введите описание заметки");
+        if (desc !== null) desc = desc.trim();
+        else return;
+
         const note = {id: count, categoryId: id, date: new Date(), description: desc};
         const action = NoteActionAdd(note);
         dispatch(action);
@@ -30,7 +32,6 @@ const Category: React.FC<{ title: string, id: number }> = ({title, id}) => {
     const dispatch = useDispatch();
     const handleClick = () => {
         const payload = {id, title};
-        console.log(payload)
         dispatch(CategoryActionClearNotes(payload));
         dispatch(CategoryActionRemove(payload));
     }

@@ -8,8 +8,10 @@ const HeaderBtn: FC = () => {
     const dispatch = useDispatch();
     const {categories} = useTypedSelector(state => state.main);
     const handleClick = () => {
-        let title = prompt("Введите название категории") || "";
-        if (title) title = title.trim();
+        let title = prompt("Введите название категории");
+        if (title !== null) title = title.trim();
+        else return;
+
         const payload = {id: categories.length, title: title};
         const action = CategoryActionAdd(payload);
         dispatch(action);
