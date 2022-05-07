@@ -9,6 +9,7 @@ const HeaderBtn: FC = () => {
     const {categories} = useTypedSelector(state => state.main);
     const handleClick = () => {
         let title = prompt("Введите название категории") || "";
+        console.log(title)
         if (title) title = title.trim();
         CategoryPostRequest('/category/add', dispatch, [{id: categories.length, title: title}]);
     }

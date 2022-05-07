@@ -1,4 +1,4 @@
-import {persistor, serverUrl} from "../../store/configureStore";
+import {persistor} from "../../store/configureStore";
 import {useDispatch} from "react-redux";
 import {FC} from "react";
 import "./clear-btn.css";
