@@ -5,6 +5,7 @@ import useTypedSelector from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import React from "react";
 import "./category.css";
+import add from "../../assets/svg/add.svg";
 
 const Button: React.FC<{ id: number }> = ({id}) => {
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Button: React.FC<{ id: number }> = ({id}) => {
 
     return (
         <div className="category-btn" onClick={handleClick}>
-            <span>+</span>
+            <img src={add} alt="Добавить"/>
         </div>
     );
 }

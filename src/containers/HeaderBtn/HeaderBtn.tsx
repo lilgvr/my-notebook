@@ -3,6 +3,7 @@ import {FC} from "react";
 import {useDispatch} from "react-redux";
 import {CategoryActionAdd} from "../../store/action-creators/category/CategoryActionAdd";
 import useTypedSelector from "../../hooks/useTypedSelector";
+import add from "../../assets/svg/add.svg";
 
 const HeaderBtn: FC = () => {
     const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const HeaderBtn: FC = () => {
     return (
         <div className="header-btn-ctr">
             <div className="header-btn" onClick={handleClick}>
-                <span>+</span>
+                <img src={add} alt="Добавить"/>
             </div>
             <p>Добавить категорию</p>
         </div>

@@ -11,6 +11,8 @@
     font-size: .75vw;
     font-weight: 100;
     transition: color .2s linear;
+    width: 100%;
+    text-align: center;
 }
 
 .category p:empty::before{
@@ -47,4 +49,14 @@
 
 .category-btn:hover span {
     color: #111111;
+}
+
+.category-btn img{
+    height: 50%;
+    filter: invert(100%);
+    transition: filter .25s linear;
+}
+
+.category-btn:hover img{
+    filter: invert(10%);
 }
