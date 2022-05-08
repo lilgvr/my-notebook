@@ -18,4 +18,4 @@ export const persistedStore = configureStore({
 
 export const store = configureStore({reducer: rootReducer});
 
-export const persistor = persistStore(persistedStore);
+export const persist = persistStore(persistedStore);

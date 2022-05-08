@@ -14,9 +14,7 @@ function App() {
                 <EmptyCtr/>
                 :
                 <div className="container">
-                    {categories.map((el, i) => {
-                        return <ColumnCtr id={i} key={i}/>
-                    })}
+                    {categories.map((_el, i) => <ColumnCtr id={i} key={i}/>)}
                 </div>
             }
         </Fragment>

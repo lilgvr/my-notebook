@@ -1,5 +1,5 @@
 import {CategoryActionClean} from "../../store/action-creators/category/CategoryActionClean";
-import {persistor} from "../../store/configureStore";
+import {persist} from "../../store/configureStore";
 import {useDispatch} from "react-redux";
 import {FC} from "react";
 import "./clear-btn.css";
@@ -11,7 +11,7 @@ const ClearBtn: FC = () => {
     const handleClick = () => {
         dispatch(CategoryActionClean());
         dispatch(NoteActionClean());
-        persistor.flush();
+        persist.flush();
     }
 
     return (
