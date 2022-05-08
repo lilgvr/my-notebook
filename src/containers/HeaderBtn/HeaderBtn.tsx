@@ -9,7 +9,7 @@ const HeaderBtn: FC = () => {
     const dispatch = useDispatch();
     const {categories} = useTypedSelector(state => state.main);
     const handleClick = () => {
-        let title = prompt("Введите название категории");
+        let title = prompt("Enter category title");
         if (title !== null) title = title.trim();
         else return;
 
@@ -23,7 +23,7 @@ const HeaderBtn: FC = () => {
             <div className="header-btn" onClick={handleClick}>
                 <img src={add} alt="Добавить"/>
             </div>
-            <p>Добавить категорию</p>
+            <p>New category</p>
         </div>
     );
 }

@@ -3,6 +3,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-left: .5vw;
+}
+
+.header-btn-ctr:first-of-type{
+    margin-right: .5vw;
 }
 
 .header-btn {
@@ -32,17 +37,17 @@
     color: #111111;
 }
 
-.header-btn-ctr p{
+.header-btn-ctr p {
     font-size: 1vw;
     font-weight: 100;
 }
 
-.header-btn img{
+.header-btn img {
     height: 50%;
     filter: invert(100%);
     transition: filter .25s linear;
 }
 
-.header-btn:hover img{
+.header-btn:hover img {
     filter: invert(10%);
 }

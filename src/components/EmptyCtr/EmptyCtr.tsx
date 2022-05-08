@@ -4,7 +4,7 @@ import "./empty-ctr.css";
 const EmptyCtr: FC = () => {
     return (
         <div className="empty-ctr">
-            <p>Список пуст</p>
+            <p>notebook is empty</p>
         </div>
     );
 }

@@ -17,9 +17,9 @@ const ClearBtn: FC = () => {
     return (
         <div className="header-btn-ctr" onClick={handleClick}>
             <div className="header-btn clear-btn">
-                <img src={clean} alt="Очистить"/>
+                <img src={clean} alt="Clear"/>
             </div>
-            <p>Очистить</p>
+            <p>Clear</p>
         </div>
     );
 }

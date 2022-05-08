@@ -16,7 +16,7 @@ const Note: FC<{ id: number, date: Date, description: string }> = ({id, date, de
     }
 
     return (
-        <div className="note" title="Удалить" onClick={handleClick}>
+        <div className="note" title="Remove" onClick={handleClick}>
             <p className="note_date">{formatDate(date)}</p>
             <p className="note_description">{description}</p>
         </div>

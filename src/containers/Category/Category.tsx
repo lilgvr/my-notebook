@@ -13,7 +13,7 @@ const Button: React.FC<{ id: number }> = ({id}) => {
     const count = notes.length;
 
     const handleClick = () => {
-        let desc = prompt("Введите описание заметки");
+        let desc = prompt("Enter note description");
         if (desc !== null) desc = desc.trim();
         else return;
 
@@ -24,7 +24,7 @@ const Button: React.FC<{ id: number }> = ({id}) => {
 
     return (
         <div className="category-btn" onClick={handleClick}>
-            <img src={add} alt="Добавить"/>
+            <img src={add} alt="Add"/>
         </div>
     );
 }
@@ -40,7 +40,7 @@ const Category: React.FC<{ title: string, id: number }> = ({title, id}) => {
     return (
         <div className="category">
             <Button id={id}/>
-            <p title="Удалить" onClick={handleClick}>{title}</p>
+            <p title="Remove" onClick={handleClick}>{title}</p>
         </div>
     );
 }
