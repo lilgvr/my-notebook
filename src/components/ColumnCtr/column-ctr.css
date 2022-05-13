@@ -1,4 +1,4 @@
-.column-ctr{
+.column-ctr {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -10,6 +10,6 @@
     --border: 1px solid white;
 }
 
-.column-ctr:first-of-type{
+.column-ctr:first-of-type {
     border-left: var(--border);
 }
