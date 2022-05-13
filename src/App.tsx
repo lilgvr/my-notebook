@@ -24,7 +24,7 @@ function App() {
                 <EmptyCtr/>
                 :
                 <div className="container" style={{width: ctrWidth}}>
-                    {categories.map((_el, i) => <ColumnCtr id={i} key={i}/>)}
+                    {categories.map((el, i) => <ColumnCtr id={el.id} key={el.id}/>)}
                 </div>
             }
         </Fragment>
