@@ -1,10 +1,13 @@
 import {FC} from "react";
 import "./empty-ctr.css";
+import strings from "../../assets/strings";
 
 const EmptyCtr: FC = () => {
+    const {emptyList} = strings;
+
     return (
         <div className="empty-ctr">
-            <p>Список пуст</p>
+            <p>{emptyList}</p>
         </div>
     );
 }
