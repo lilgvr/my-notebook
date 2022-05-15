@@ -20,7 +20,7 @@ const NotesCtr: React.FC<{ id: number }> = ({id}) => {
     return (
         <div className="notes-ctr">
             {preparedNotes.map(
-                (el, i) => <Note id={el.id} date={el.date} description={el.description} key={i}/>
+                (el) => <Note id={el.id} date={el.date} description={el.description} key={el.id}/>
             )}
         </div>
     );
