@@ -29,7 +29,7 @@ const mainReducer = (state: INotebookState = initialState, action: NotebookActio
         case CategoryActions.RESET_CATEGORIES:
             return {
                 ...state,
-                notes: state.notes.filter(note => state.categories.filter(category => category.id !== note.categoryId))
+                notes: state.notes.filter(note => note.categoryId !== action.payload.id)
             };
 
         default:
